@@ -52,14 +52,6 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="GHBbdModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="estudiantesSet">
-          <Key>
-            <PropertyRef Name="Idestudiantes" />
-          </Key>
-          <Property Name="Idestudiantes" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="materia" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="nombre" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-        </EntityType>
         <EntityType Name="eventosSet">
           <Key>
             <PropertyRef Name="Ideventos" />
@@ -80,7 +72,6 @@
           <Property Name="telefono" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
         </EntityType>
         <EntityContainer Name="GHBbdEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="estudiantesSet" EntityType="Self.estudiantesSet" />
           <EntitySet Name="eventosSet" EntityType="Self.eventosSet" />
           <EntitySet Name="Table" EntityType="Self.Table" />
           <EntitySet Name="grupo1" EntityType="GHBbdModel.grupo1" />

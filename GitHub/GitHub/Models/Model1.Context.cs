@@ -25,7 +25,6 @@ namespace GitHub.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<estudiantesSet> estudiantesSet { get; set; }
         public virtual DbSet<eventosSet> eventosSet { get; set; }
         public virtual DbSet<Table> Table { get; set; }
         public virtual DbSet<grupo1> grupo1 { get; set; }

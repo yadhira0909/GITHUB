@@ -5,7 +5,6 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="4d15fc44207f4e2885dfe606829cdd12" Name="Diagram1">
-        <EntityTypeShape EntityType="GHBbdModel.estudiantesSet" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="GHBbdModel.eventosSet" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="GHBbdModel.Table" Width="1.5" PointX="6.5" PointY="0.625" IsExpanded="true" />
         <EntityTypeShape EntityType="GHBbdModel.grupo1" Width="1.5" PointX="0.75" PointY="3.75" />
