@@ -4,15 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="GHBbdModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="estudiantesSet">
-          <Key>
-            <PropertyRef Name="Idestudiantes" />
-          </Key>
-          <Property Name="Idestudiantes" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="materia" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="nombre" Type="nvarchar(max)" Nullable="false" />
-        </EntityType>
+    <Schema Namespace="GHBbdModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="eventosSet">
           <Key>
             <PropertyRef Name="Ideventos" />
@@ -21,6 +13,24 @@
           <Property Name="evento" Type="nvarchar(max)" Nullable="false" />
           <Property Name="hora" Type="nvarchar(max)" Nullable="false" />
           <Property Name="fecha" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="grupo1">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Nombre del estudiante" Type="nchar" MaxLength="60" />
+          <Property Name="Materias" Type="nchar" MaxLength="120" />
+          <Property Name="Cuatromestres cursados" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="grupo2">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Nombre del estudiante" Type="varchar" MaxLength="60" />
+          <Property Name="Materias" Type="nchar" MaxLength="120" />
+          <Property Name="Cuatrimestres cursados" Type="nchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="Table">
           <Key>
@@ -33,12 +43,12 @@
           <Property Name="telefono" Type="nchar" MaxLength="10" />
         </EntityType>
         <EntityContainer Name="GHBbdModelStoreContainer">
-          <EntitySet Name="estudiantesSet" EntityType="Self.estudiantesSet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="eventosSet" EntityType="Self.eventosSet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="grupo1" EntityType="Self.grupo1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="grupo2" EntityType="Self.grupo2" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Table" EntityType="Self.Table" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="GHBbdModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -73,22 +83,33 @@
           <EntitySet Name="estudiantesSet" EntityType="Self.estudiantesSet" />
           <EntitySet Name="eventosSet" EntityType="Self.eventosSet" />
           <EntitySet Name="Table" EntityType="Self.Table" />
+          <EntitySet Name="grupo1" EntityType="GHBbdModel.grupo1" />
+          <EntitySet Name="grupo2" EntityType="GHBbdModel.grupo2" />
         </EntityContainer>
+        <EntityType Name="grupo1">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Nombre_del_estudiante" Type="String" MaxLength="60" FixedLength="true" Unicode="true" />
+          <Property Name="Materias" Type="String" MaxLength="120" FixedLength="true" Unicode="true" />
+          <Property Name="Cuatromestres_cursados" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="grupo2">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Nombre_del_estudiante" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="Materias" Type="String" MaxLength="120" FixedLength="true" Unicode="true" />
+          <Property Name="Cuatrimestres_cursados" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="GHBbdModelStoreContainer" CdmEntityContainer="GHBbdEntities">
-          <EntitySetMapping Name="estudiantesSet">
-            <EntityTypeMapping TypeName="GHBbdModel.estudiantesSet">
-              <MappingFragment StoreEntitySet="estudiantesSet">
-                <ScalarProperty Name="Idestudiantes" ColumnName="Idestudiantes" />
-                <ScalarProperty Name="materia" ColumnName="materia" />
-                <ScalarProperty Name="nombre" ColumnName="nombre" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="eventosSet">
             <EntityTypeMapping TypeName="GHBbdModel.eventosSet">
               <MappingFragment StoreEntitySet="eventosSet">
@@ -107,6 +128,26 @@
                 <ScalarProperty Name="direccion" ColumnName="direccion" />
                 <ScalarProperty Name="email" ColumnName="email" />
                 <ScalarProperty Name="telefono" ColumnName="telefono" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="grupo1">
+            <EntityTypeMapping TypeName="GHBbdModel.grupo1">
+              <MappingFragment StoreEntitySet="grupo1">
+                <ScalarProperty Name="Cuatromestres_cursados" ColumnName="Cuatromestres cursados" />
+                <ScalarProperty Name="Materias" ColumnName="Materias" />
+                <ScalarProperty Name="Nombre_del_estudiante" ColumnName="Nombre del estudiante" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="grupo2">
+            <EntityTypeMapping TypeName="GHBbdModel.grupo2">
+              <MappingFragment StoreEntitySet="grupo2">
+                <ScalarProperty Name="Cuatrimestres_cursados" ColumnName="Cuatrimestres cursados" />
+                <ScalarProperty Name="Materias" ColumnName="Materias" />
+                <ScalarProperty Name="Nombre_del_estudiante" ColumnName="Nombre del estudiante" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

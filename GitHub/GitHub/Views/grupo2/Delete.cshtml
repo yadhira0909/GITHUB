@@ -1,4 +1,4 @@
-﻿@model GitHub.Models.estudiantesSet
+﻿@model GitHub.Models.grupo2
 
 @{
     ViewBag.Title = "Delete";
@@ -8,23 +8,31 @@
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>estudiantesSet</h4>
+    <h4>grupo2</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.materia)
+            @Html.DisplayNameFor(model => model.Nombre_del_estudiante)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.materia)
+            @Html.DisplayFor(model => model.Nombre_del_estudiante)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.nombre)
+            @Html.DisplayNameFor(model => model.Materias)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.nombre)
+            @Html.DisplayFor(model => model.Materias)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cuatrimestres_cursados)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cuatrimestres_cursados)
         </dd>
 
     </dl>

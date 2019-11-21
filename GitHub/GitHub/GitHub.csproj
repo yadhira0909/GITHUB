@@ -170,8 +170,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\estudiantesSetsController.cs" />
     <Compile Include="Controllers\eventosSetsController.cs" />
+    <Compile Include="Controllers\grupo1Controller.cs" />
+    <Compile Include="Controllers\grupo2Controller.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\TablesController.cs" />
@@ -183,6 +184,12 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\eventosSet.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\grupo1.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\grupo2.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
@@ -281,11 +288,6 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\estudiantesSets\Create.cshtml" />
-    <Content Include="Views\estudiantesSets\Delete.cshtml" />
-    <Content Include="Views\estudiantesSets\Details.cshtml" />
-    <Content Include="Views\estudiantesSets\Edit.cshtml" />
-    <Content Include="Views\estudiantesSets\Index.cshtml" />
     <Content Include="Views\Tables\Create.cshtml" />
     <Content Include="Views\Tables\Delete.cshtml" />
     <Content Include="Views\Tables\Details.cshtml" />
@@ -296,6 +298,17 @@
     <Content Include="Views\eventosSets\Details.cshtml" />
     <Content Include="Views\eventosSets\Edit.cshtml" />
     <Content Include="Views\eventosSets\Index.cshtml" />
+    <Content Include="Views\grupo1\Create.cshtml" />
+    <Content Include="Views\grupo1\Delete.cshtml" />
+    <Content Include="Views\grupo1\Details.cshtml" />
+    <Content Include="Views\grupo1\Edit.cshtml" />
+    <Content Include="Views\grupo1\Index.cshtml" />
+    <Content Include="Views\grupo2\Create.cshtml" />
+    <Content Include="Views\grupo2\Delete.cshtml" />
+    <Content Include="Views\grupo2\Details.cshtml" />
+    <Content Include="Views\grupo2\Edit.cshtml" />
+    <Content Include="Views\grupo2\Index.cshtml" />
+    <Content Include="Views\Tables\Estudiantes.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

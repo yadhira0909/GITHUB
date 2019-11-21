@@ -10,107 +10,107 @@ using GitHub.Models;
 
 namespace GitHub.Controllers
 {
-    public class estudiantesSetsController : Controller
+    public class grupo2Controller : Controller
     {
         private GHBbdEntities db = new GHBbdEntities();
 
-        // GET: estudiantesSets
+        // GET: grupo2
         public ActionResult Index()
         {
-            return View(db.estudiantesSet.ToList());
+            return View(db.grupo2.ToList());
         }
 
-        // GET: estudiantesSets/Details/5
+        // GET: grupo2/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            estudiantesSet estudiantesSet = db.estudiantesSet.Find(id);
-            if (estudiantesSet == null)
+            grupo2 grupo2 = db.grupo2.Find(id);
+            if (grupo2 == null)
             {
                 return HttpNotFound();
             }
-            return View(estudiantesSet);
+            return View(grupo2);
         }
 
-        // GET: estudiantesSets/Create
+        // GET: grupo2/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: estudiantesSets/Create
+        // POST: grupo2/Create
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Idestudiantes,materia,nombre")] estudiantesSet estudiantesSet)
+        public ActionResult Create([Bind(Include = "Id,Nombre_del_estudiante,Materias,Cuatrimestres_cursados")] grupo2 grupo2)
         {
             if (ModelState.IsValid)
             {
-                db.estudiantesSet.Add(estudiantesSet);
+                db.grupo2.Add(grupo2);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(estudiantesSet);
+            return View(grupo2);
         }
 
-        // GET: estudiantesSets/Edit/5
+        // GET: grupo2/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            estudiantesSet estudiantesSet = db.estudiantesSet.Find(id);
-            if (estudiantesSet == null)
+            grupo2 grupo2 = db.grupo2.Find(id);
+            if (grupo2 == null)
             {
                 return HttpNotFound();
             }
-            return View(estudiantesSet);
+            return View(grupo2);
         }
 
-        // POST: estudiantesSets/Edit/5
+        // POST: grupo2/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Idestudiantes,materia,nombre")] estudiantesSet estudiantesSet)
+        public ActionResult Edit([Bind(Include = "Id,Nombre_del_estudiante,Materias,Cuatrimestres_cursados")] grupo2 grupo2)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(estudiantesSet).State = EntityState.Modified;
+                db.Entry(grupo2).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(estudiantesSet);
+            return View(grupo2);
         }
 
-        // GET: estudiantesSets/Delete/5
+        // GET: grupo2/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            estudiantesSet estudiantesSet = db.estudiantesSet.Find(id);
-            if (estudiantesSet == null)
+            grupo2 grupo2 = db.grupo2.Find(id);
+            if (grupo2 == null)
             {
                 return HttpNotFound();
             }
-            return View(estudiantesSet);
+            return View(grupo2);
         }
 
-        // POST: estudiantesSets/Delete/5
+        // POST: grupo2/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            estudiantesSet estudiantesSet = db.estudiantesSet.Find(id);
-            db.estudiantesSet.Remove(estudiantesSet);
+            grupo2 grupo2 = db.grupo2.Find(id);
+            db.grupo2.Remove(grupo2);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
