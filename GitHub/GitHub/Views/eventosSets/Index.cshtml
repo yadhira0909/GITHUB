@@ -10,6 +10,11 @@
     @Html.ActionLink("Agregar evento", "Create")
 </p>
 <table class="table">
+
+    <form method="post">
+        <input name="Busqueda" type="search" /><button type="submit">Buscar</button>
+
+    </form>
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.evento)
@@ -23,23 +28,24 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.evento)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.hora)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.fecha)
-        </td>
-        <td>
-            @Html.ActionLink("Editar", "Edit", new { id=item.Ideventos }) |
-            @Html.ActionLink("Detalles", "Details", new { id=item.Ideventos }) |
-            @Html.ActionLink("Eliminar", "Delete", new { id=item.Ideventos })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.evento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.hora)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fecha)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.Ideventos }) |
+                @Html.ActionLink("Detalles", "Details", new { id = item.Ideventos }) |
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.Ideventos })
+            </td>
+        </tr>
+    }
 
 </table>

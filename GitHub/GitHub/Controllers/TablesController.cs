@@ -19,7 +19,12 @@ namespace GitHub.Controllers
         {
             return View(db.Table.ToList());
         }
-
+        [HttpPost]
+        public ActionResult Index(string Busqueda)
+        {
+            var ListaPersonas = from p in db.Table where p.nombre.Contains(Busqueda) || p.telefono.Contains(Busqueda) select p;
+            return View(ListaPersonas);
+        }
         public ActionResult Estudiantes()
         {
             return View();

@@ -21,6 +21,12 @@ namespace GitHub.Controllers
         }
 
         // GET: eventosSets/Details/5
+        [HttpPost]
+            public ActionResult Index(string Busqueda)
+        {
+            var ListaEventos = from p in db.eventosSet where p.fecha.Contains(Busqueda) || p.hora.Contains(Busqueda) select p;
+            return View(ListaEventos);
+        }
         public ActionResult Details(int? id)
         {
             if (id == null)
