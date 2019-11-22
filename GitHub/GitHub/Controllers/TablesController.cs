@@ -29,6 +29,10 @@ namespace GitHub.Controllers
         {
             return View();
         }
+        public ActionResult Acerca()
+        {
+            return View();
+        }
 
         // GET: Tables/Details/5
         public ActionResult Details(int? id)

@@ -22,9 +22,9 @@ namespace GitHub.Controllers
 
         // GET: eventosSets/Details/5
         [HttpPost]
-            public ActionResult Index(string Busqueda)
+            public ActionResult Index(string busqueda)
         {
-            var ListaEventos = from p in db.eventosSet where p.fecha.Contains(Busqueda) || p.hora.Contains(Busqueda) select p;
+            var ListaEventos = from a in db.eventosSet where a.evento.Contains(busqueda) || a.fecha.Contains(busqueda) select a;
             return View(ListaEventos);
         }
         public ActionResult Details(int? id)
